@@ -16,9 +16,19 @@ export class AppComponent {
       icon: 'home'
     },
     {
-      title: 'List',
+      title: 'Films',
       url: '/list',
-      icon: 'list'
+      icon: 'film'
+    },
+    {
+      title: 'Starships',
+      url: '/starships',
+      icon: 'paper-plane'
+    },
+    {
+      title: 'Vehicles',
+      url: '/vehicles',
+      icon: 'car'
     }
   ];
 

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Data_manager } from '../data_objects';
 
 @Component({
   selector: 'app-home',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-
+  public dataman = new Data_manager();
 }
