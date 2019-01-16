@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Data_manager } from '../data_objects';
+import { NavController,AlertController,ModalController } from '@ionic/angular';
+import { ModalPage } from '../modal/modal.page';
 
 @Component({
   selector: 'app-list',
@@ -27,8 +29,19 @@ export class ListPage implements OnInit {
     req.send();
   }
 
-  constructor() {
+  constructor(private modalCtrl:ModalController, private alertCtrl:AlertController) {
     this.reqFilms();
+  }
+
+  async presentModal(char) {
+    console.log(char);
+
+    const modal = await this.modalCtrl.create({
+      component: ModalPage,
+      componentProps:{data: char}
+    });
+
+   return await modal.present();
   }
 
   ngOnInit() {

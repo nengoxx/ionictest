@@ -16,9 +16,9 @@
         <ion-card-title>{{film.title}}</ion-card-title>
       </ion-card-header>
       <ion-card-content>
-        {{film.director}}<br>{{film.release_date}}
+        <p>{{film.director}}<br>{{film.release_date}}</p>
         <ion-list>
-          <button ion-item *ngFor="let char of film.characters">
+          <button ion-item *ngFor="let char of film.characters" (click)="presentModal(char)">
             {{char.name}}
           </button>
         </ion-list>

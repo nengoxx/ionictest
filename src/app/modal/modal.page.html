@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{data.name}}</ion-title>
+    <ion-buttons start>
+      <button ion-button (click)="closeModal()">Close</button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list no-lines>
+    <ion-item>
+      <p>Height: {{data.height}}<br>
+      Mass: {{data.mass}}<br>
+      Gender: {{data.gender}}<br>
+      Birth year: {{data.birth_year}}<br>
+      Hair color: {{data.hair_color}}<br>
+      Skin color: {{data.skin_color}}<br>
+      Eye color: {{data.eye_color}}</p>
+    </ion-item>
+  </ion-list>
+</ion-content>

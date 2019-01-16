@@ -16,7 +16,8 @@ const routes: Routes = [
     loadChildren: './list/list.module#ListPageModule'
   },
   { path: 'vehicles', loadChildren: './vehicles/vehicles.module#VehiclesPageModule' },
-  { path: 'starships', loadChildren: './starships/starships.module#StarshipsPageModule' }
+  { path: 'starships', loadChildren: './starships/starships.module#StarshipsPageModule' },
+  { path: 'modal', loadChildren: './modal/modal.module#ModalPageModule' }
 ];
 
 @NgModule({

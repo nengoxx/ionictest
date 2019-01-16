@@ -81,6 +81,14 @@ export class Film {
         console.log(response);
         var c = new Character;
         c.name = response.name;
+        c.url = URLhost;
+        c.birth_year = response.birth_year;
+        c.eye_color = response.eye_color;
+        c.gender = response.gender;
+        c.hair_color = response.hair_color;
+        c.height = response.height;
+        c.mass = response.mass;
+        c.skin_color = response.skin_color;
         me.characters.push(c);
       } else {
         console.log('Error in network request: ' + req.statusText);
@@ -91,7 +99,14 @@ export class Film {
 
 export class Character {
   public name;
-
+  public url;
+  public height;
+  public mass;
+  public hair_color;
+  public skin_color;
+  public eye_color;
+  public birth_year;
+  public gender;
 }
 
 
