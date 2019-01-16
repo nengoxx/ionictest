@@ -44,6 +44,17 @@ export class ListPage implements OnInit {
    return await modal.present();
   }
 
+  doRefresh(refresher) {
+    console.log('Begin async operation', refresher);
+
+    setTimeout(() => {
+      //Reset the data and request it again
+      this.dataman.films = [];
+      this.reqFilms()
+      refresher.target.complete();
+    }, 2000);
+  }
+
   ngOnInit() {
   }
   // add back when alpha.4 is out

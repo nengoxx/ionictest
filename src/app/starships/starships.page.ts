@@ -10,6 +10,7 @@ export class StarshipsPage implements OnInit {
 
   public dataman = new Data_manager();
   public starships = this.dataman.starships;
+  public startUrl = 'https://swapi.co/api/starships/';
 
   reqStarshipsRecursive(next){
     if (next == null) {
@@ -39,7 +40,7 @@ export class StarshipsPage implements OnInit {
       console.log('Starships already set up!');
       return;
     }
-    this.reqStarshipsRecursive('https://swapi.co/api/starships/')
+    this.reqStarshipsRecursive(this.startUrl)
   }
 
   doRefresh(refresher) {
@@ -48,7 +49,7 @@ export class StarshipsPage implements OnInit {
     setTimeout(() => {
       //Reset the data and request it again
       this.dataman.starships = [];
-      this.reqStarshipsRecursive('https://swapi.co/api/starships/')
+      this.reqStarshipsRecursive(this.startUrl)
       refresher.target.complete();
     }, 2000);
   }

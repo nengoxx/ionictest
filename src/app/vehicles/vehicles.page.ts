@@ -10,6 +10,7 @@ export class VehiclesPage implements OnInit {
 
   public dataman = new Data_manager();
   public vehicles = this.dataman.vehicles;
+  public startUrl= 'https://swapi.co/api/vehicles/';
 
   // reqVehicles(){
   //   var dataman = this.dataman;
@@ -65,8 +66,19 @@ export class VehiclesPage implements OnInit {
       console.log('Vehicles already set up!');
       return;
     }
-    this.reqVehiclesRecursive('https://swapi.co/api/vehicles/')
+    this.reqVehiclesRecursive(this.startUrl)
     // this.reqVehicles();
+  }
+
+  doRefresh(refresher) {
+    console.log('Begin async operation', refresher);
+
+    setTimeout(() => {
+      //Reset the data and request it again
+      this.dataman.vehicles = [];
+      this.reqVehiclesRecursive(this.startUrl)
+      refresher.target.complete();
+    }, 2000);
   }
 
   ngOnInit() {
