@@ -42,6 +42,17 @@ export class StarshipsPage implements OnInit {
     this.reqStarshipsRecursive('https://swapi.co/api/starships/')
   }
 
+  doRefresh(refresher) {
+    console.log('Begin async operation', refresher);
+
+    setTimeout(() => {
+      //Reset the data and request it again
+      this.dataman.starships = [];
+      this.reqStarshipsRecursive('https://swapi.co/api/starships/')
+      refresher.target.complete();
+    }, 2000);
+  }
+
   ngOnInit() {
   }
 
