@@ -51,7 +51,7 @@ export class VehiclesPage implements OnInit {
     req.addEventListener('load',function(){
     if(req.status >= 200 && req.status < 400){
       response = JSON.parse(req.responseText);
-      console.log(response);
+      // console.log(response);
       dataman.setVehicles(response);
       me.reqVehiclesRecursive(response.next);
     } else {
@@ -63,7 +63,7 @@ export class VehiclesPage implements OnInit {
 
   constructor() {
     if (this.dataman.vehicles.length > 0) {
-      console.log('Vehicles already set up!');
+      // console.log('Vehicles already set up!');
       return;
     }
     this.reqVehiclesRecursive(this.startUrl)
@@ -71,8 +71,7 @@ export class VehiclesPage implements OnInit {
   }
 
   doRefresh(refresher) {
-    console.log('Begin async operation', refresher);
-
+    // console.log('Begin async operation', refresher);
     setTimeout(() => {
       //Reset the data and request it again
       this.dataman.vehicles = [];

@@ -25,7 +25,7 @@ export class StarshipsPage implements OnInit {
     req.addEventListener('load',function(){
     if(req.status >= 200 && req.status < 400){
       response = JSON.parse(req.responseText);
-      console.log(response);
+      // console.log(response);
       dataman.setStarships(response);
       me.reqStarshipsRecursive(response.next);
     } else {
@@ -37,15 +37,14 @@ export class StarshipsPage implements OnInit {
 
   constructor() {
     if (this.dataman.starships.length > 0) {
-      console.log('Starships already set up!');
+      // console.log('Starships already set up!');
       return;
     }
     this.reqStarshipsRecursive(this.startUrl)
   }
 
   doRefresh(refresher) {
-    console.log('Begin async operation', refresher);
-
+    // console.log('Begin async operation', refresher);
     setTimeout(() => {
       //Reset the data and request it again
       this.dataman.starships = [];

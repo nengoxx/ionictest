@@ -13,13 +13,13 @@ export class Data_manager {
       return Data_manager.instance;
     }
     Data_manager.instance = this;
-    console.log('Data manager created');
+    // console.log('Data manager created');
   }
 
   setFilms(response) {
     //check if 'films' array is already set up
     if (this.films.length > 0) {
-      console.log('Films already set up!');
+      // console.log('Films already set up!');
       return;
     }
     for (let i = 0; i < response.results.length; i++) {
@@ -68,6 +68,7 @@ export class Character {
 
 
 export class Starship {
+  //Some info to show about the starship
   public name;
   public model;
   public manufacturer;
@@ -89,7 +90,7 @@ export class Film {
 
   setChar(characters){
     if (this.characters.length > 0) {
-      console.log('Characters already set up!');
+      // console.log('Characters already set up!');
       return;
     }
     for (let j = 0; j < characters.length; j++){
@@ -106,7 +107,7 @@ export class Film {
     req.addEventListener('load',function(){
       if(req.status >= 200 && req.status < 400){
         response = JSON.parse(req.responseText);
-        console.log(response);
+        // console.log(response);
         var c = new Character;
         c.name = response.name;
         c.url = URLhost;

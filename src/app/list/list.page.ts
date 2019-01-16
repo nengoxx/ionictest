@@ -21,7 +21,7 @@ export class ListPage implements OnInit {
     req.addEventListener('load',function(){
       if(req.status >= 200 && req.status < 400){
         var response = JSON.parse(req.responseText);
-        console.log(response);
+        // console.log(response);
         dataman.setFilms(response);
       } else {
         console.log('Error in network request: ' + req.statusText);
@@ -34,8 +34,7 @@ export class ListPage implements OnInit {
   }
 
   async presentModal(char) {
-    console.log(char);
-
+    // console.log(char);
     const modal = await this.modalCtrl.create({
       component: ModalPage,
       componentProps:{data: char}
@@ -45,8 +44,7 @@ export class ListPage implements OnInit {
   }
 
   doRefresh(refresher) {
-    console.log('Begin async operation', refresher);
-
+    // console.log('Begin async operation', refresher);
     setTimeout(() => {
       //Reset the data and request it again
       this.dataman.films = [];
