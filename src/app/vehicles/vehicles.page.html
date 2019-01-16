@@ -10,17 +10,13 @@
 <ion-content padding>
   <ion-list>
     <ion-card *ngFor="let vehicle of vehicles">
-      <ion-card-header>
+      <!-- <ion-card-header>
         <ion-card-title>{{vehicle.name}}</ion-card-title>
-      </ion-card-header>
+      </ion-card-header> -->
       <ion-card-content>
-        <p>{{vehicle.model}}<br>{{vehicle.manufacturer}}</p>
+        <ion-card-title>{{vehicle.name}}</ion-card-title>
+        <p>Model: {{vehicle.model}}<br>Manufacturer: {{vehicle.manufacturer}}</p>
       </ion-card-content>
     </ion-card>
-    <!-- <ion-item *ngFor="let vehicle of vehicles">
-      {{vehicle.name}}
-      {{vehicle.model}}
-      {{vehicle.manufacturer}}
-    </ion-item> -->
   </ion-list>
 </ion-content>

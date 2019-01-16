@@ -1,3 +1,5 @@
+// Data Manager Class. Creates objects for the films,
+// characters, starships and vehicles with their information.
 
 export class Data_manager {
   public films: Array<Film> = [];
@@ -52,6 +54,32 @@ export class Data_manager {
   }
 }
 
+export class Character {
+  public name;
+  public url;
+  public height;
+  public mass;
+  public hair_color;
+  public skin_color;
+  public eye_color;
+  public birth_year;
+  public gender;
+}
+
+
+export class Starship {
+  public name;
+  public model;
+  public manufacturer;
+}
+
+
+export class Vehicle {
+  public name;
+  public model;
+  public manufacturer;
+}
+
 
 export class Film {
   public title;
@@ -96,29 +124,3 @@ export class Film {
       req.send();
     }
   }
-
-export class Character {
-  public name;
-  public url;
-  public height;
-  public mass;
-  public hair_color;
-  public skin_color;
-  public eye_color;
-  public birth_year;
-  public gender;
-}
-
-
-export class Starship {
-  public name;
-  public model;
-  public manufacturer;
-}
-
-
-export class Vehicle {
-  public name;
-  public model;
-  public manufacturer;
-}
