@@ -25,6 +25,8 @@ export class Data_manager {
       f.title = response.results[i].title;
       f.director = response.results[i].director;
       f.release_date = response.results[i].release_date;
+      //Set the characters
+      f.setChar(response.results[i].characters);
       this.films.push(f);
     }
   }
@@ -55,6 +57,41 @@ export class Film {
   public title;
   public director;
   public release_date;
+  public characters: Array<Character> = [];
+
+  setChar(characters){
+    if (this.characters.length > 0) {
+      console.log('Characters already set up!');
+      return;
+    }
+    for (let j = 0; j < characters.length; j++){
+      this.reqChar(characters[j]);
+    }
+  }
+
+  reqChar(url) {
+    var me = this;
+    var response;
+    var URLhost = url;
+    var req = new XMLHttpRequest();
+    req.open('GET', URLhost, true);
+    req.addEventListener('load',function(){
+      if(req.status >= 200 && req.status < 400){
+        response = JSON.parse(req.responseText);
+        console.log(response);
+        var c = new Character;
+        c.name = response.name;
+        me.characters.push(c);
+      } else {
+        console.log('Error in network request: ' + req.statusText);
+      }});
+      req.send();
+    }
+  }
+
+export class Character {
+  public name;
+
 }
 
 

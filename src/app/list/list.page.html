@@ -17,6 +17,11 @@
       </ion-card-header>
       <ion-card-content>
         {{film.director}}<br>{{film.release_date}}
+        <ion-list>
+          <button ion-item *ngFor="let char of film.characters">
+            {{char.name}}
+          </button>
+        </ion-list>
       </ion-card-content>
     </ion-card>
     <!-- <ion-item *ngFor="let film of films">
