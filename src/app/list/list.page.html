@@ -11,9 +11,17 @@
 
 <ion-content>
   <ion-list>
-    <ion-item *ngFor="let film of films">
+    <ion-card *ngFor="let film of films">
+      <ion-card-header>
+        <ion-card-title>{{film.title}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        {{film.director}}<br>{{film.release_date}}
+      </ion-card-content>
+    </ion-card>
+    <!-- <ion-item *ngFor="let film of films">
       {{film.title}}
-    </ion-item>
+    </ion-item> -->
   </ion-list>
   <!--
     <div *ngIf="selectedItem" padding>

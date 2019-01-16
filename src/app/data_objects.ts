@@ -29,7 +29,25 @@ export class Data_manager {
     }
   }
 
+  setVehicles(response) {
+    for (let i = 0; i < response.results.length; i++) {
+      var v = new Vehicle;
+      v.name = response.results[i].name;
+      v.model = response.results[i].model;
+      v.manufacturer = response.results[i].manufacturer;
+      this.vehicles.push(v);
+    }
+  }
 
+  setStarships(response) {
+    for (let i = 0; i < response.results.length; i++) {
+      var s = new Starship;
+      s.name = response.results[i].name;
+      s.model = response.results[i].model;
+      s.manufacturer = response.results[i].manufacturer;
+      this.starships.push(s);
+    }
+  }
 }
 
 

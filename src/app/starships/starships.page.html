@@ -8,5 +8,14 @@
 </ion-header>
 
 <ion-content padding>
-
+  <ion-list>
+    <ion-card *ngFor="let starship of starships">
+      <ion-card-header>
+        <ion-card-title>{{starship.name}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        {{starship.model}}<br>{{starship.manufacturer}}
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
 </ion-content>
